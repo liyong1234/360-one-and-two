@@ -163,9 +163,28 @@
 	 <script src="2.js"></script>
 	 <script>
 	  $(".allpage").fullpage({
-	     sectionsColor:["rgb(13, 165, 214)", "rgb(42,182,96)"]
+	     sectionsColor:["rgb(13, 165, 214)", "rgb(42,182,96)"],
 
+          afterLoad:function(a, b) {
+			if (b ==1)
+			 {  
+              $(".text").removeClass("new");
+                setTimeout(function(){ 
+			         $(".text").addClass("new");
+			    },200);
+   
+			 }
+		
 
+         if (b ==2)
+          {
+               $(".shield").removeClass("new")
+                setTimeout(function(){
+	               $(".shield").addClass("new")
+	              },200);
+
+          }
+		}
 	  
 	  });
 	 </script>

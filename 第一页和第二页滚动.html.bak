@@ -54,6 +54,67 @@
 	     text-align:center;
 	 
 	 }
+ .shield{
+     width:500px;
+	 display:block;
+	 float:left;
+	 padding: 50px 0 0 50px;
+     
+	 }
+
+    .q1{
+	  transform:translate(100px,40px) rotate(145deg);
+	}
+    
+	 .q2{
+	    transform:translate(200px,50px) rotate(45deg);
+	 
+	 }
+
+	 .q3{
+	    transform:translate(300px,60px) rotate(-145deg);
+	 
+	 }
+	 
+	 .q4{
+	  transform:translate(100px,40px) rotate(45deg);
+	 
+	 }
+     
+	 .q6{
+	  transform:translate(400px,50px) rotate(45deg);
+	 }
+	 
+	 .q7{
+	    transform:translate(500px,40px) rotate(65deg);
+	 }
+	 
+	 .q8{
+	    transform:translate(100px,70px) rotate(145deg);
+	 
+	 }
+     .q9{
+	    transform:translate(200px,60px) rotate(35deg);
+	 
+	 }
+	 .shield img{
+	     opacity:0;
+	 }
+
+	  
+	 
+	 .new img{
+	    transform:translate(0,0) rotate(0deg); 
+	    transition:all 3s ease-out 0.5s;
+        opacity:1;
+	 }
+	 .info {
+	     display:block;
+		 float:left;
+		 margin:150px 0 0 0;
+
+	 }
+
  
    </style>
    <div class="allpage">
@@ -80,10 +141,22 @@
 
   </div>
 
-	   <div  class="section page2" >
-         第二
-
-	   </div>
+	 <div  class="section page2" >
+       <div class="shield ">
+        <img src="shield_1.png" class="q1"/>
+		<img src="shield_2.png" class="q2"/>
+		<img src="shield_3.png" class="q3"/>
+		<img src="shield_4.png" class="q4"/>
+		<img src="shield_5.png" class="q5"/>
+		<img src="shield_6.png" class="q6"/>
+		<img src="shield_7.png" class="q7"/>
+		<img src="shield_8.png" class="q8"/>
+		<img src="shield_9.png" class="q9"/>
+		
+       </div>
+          <div class="info">
+             <img src="info_2.png">
+	     </div>
    </div>
 
      <script src="1.js"></script>
@@ -92,7 +165,26 @@
 	  $(".allpage").fullpage({
 	     sectionsColor:["rgb(13, 165, 214)", "rgb(42,182,96)"]
 
+          afterLoad:function(a, b) {
+			if (b ==1)
+			 {  
+              $(".text").removeClass("new");
+                setTimeout(function(){ 
+			         $(".text").addClass("new");
+			    },200);
+   
+			 }
+		
 
+         if (b ==2)
+          {
+               $(".shield").removeClass("new")
+                setTimeout(function(){
+	               $(".shield").addClass("new")
+	              },200);
+
+          }
+		}
 	  
 	  });
 	 </script>
